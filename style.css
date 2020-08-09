@@ -71,6 +71,9 @@ header h1 {
 .navPanel,
 .page-wrapper {
     transition: transform .4s ease-in-out;
+    -moz-transition: transform .4s ease-in-out;
+    -webkit-transition: transform .4s ease-in-out;
+    -o-transition: transform .4s ease-in-out;
 }
 
 .navPanel {
@@ -91,15 +94,6 @@ header h1 {
 
 .pageWrapperBias {
     transform: translateX(275px);
-}
-
-.navPanel-listLink-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.navigation ul li:last-child a,
-.navPanel-listLink-item:nth-child(2) {
-    border-bottom: 0;
 }
 
 .navPanel--itemLink-listLinks li a {
@@ -126,6 +120,12 @@ header h1 {
     line-height: 30px;
 }
 
+.navigation ul li:last-child .header-layoutItem-link,
+.header-layoutList ul li:last-child .header--moreLinksList-itemLink,
+.navPanel ul li:last-child .navPanel-listLink-itemLink {
+    border-bottom: 0;
+}
+
 .navPanel ul li a {
     text-transform: uppercase;
     padding: 0;
@@ -141,6 +141,9 @@ header h1 {
     padding: 12px 0;
     top: 3.5em;
     transition: visibility .5s, opacity .5s;
+    -moz-transition:  visibility .5s, opacity .5s;
+    -webkit-transition:  visibility .5s, opacity .5s;
+    -o-transition:  visibility .5s, opacity .5s;
     visibility: hidden;
     opacity: 0;
     z-index: 10;
@@ -149,6 +152,9 @@ header h1 {
 .buttonGreetings,
 .header-layout-button {
     transition: background .2s, box-shadow .2s;
+    -moz-transition: background .2s, box-shadow .2s;
+    -webkit-transition: background .2s, box-shadow .2s;
+    -o-transition: background .2s, box-shadow .2s;
 }
 
 .buttonGreetings:hover,
@@ -179,6 +185,7 @@ header h1 {
     position: relative;
 }
 
+.header-layoutItem:last-child::before,
 .header-layout-button::before {
     content: '\f107';
     font-weight: 900;
@@ -218,6 +225,9 @@ header h1 {
 .buttonSignUp {
     background: #83d3c9;
     transition: background .3s;
+    -moz-transition: background .3s;
+    -webkit-transition: background .3s;
+    -o-transition: background .3s;
 }
 
 .buttonSignUp:hover {
@@ -253,10 +263,14 @@ header h1 {
     padding-left: 2em;
 }
 
-.navPanel--itemLink-listLinks-item:last-child:before,
 .header-layoutItem:last-child::before {
+    position: absolute;
     color: silver;
     left: 0.8em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: fit-content;
 }
 
 .header-layoutItem:last-child:hover::before {
@@ -304,6 +318,9 @@ header h1 {
     width: 250px;
     height: 54px;
     transition: background .4s;
+    -moz-transition: background .4s;
+    -webkit-transition: background .4s;
+    -o-transition: background .4s;
     margin: 40px auto 0;
 }
 
