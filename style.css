@@ -23,6 +23,15 @@ body {
     overflow-x: hidden;
 }
 
+span {
+    display: block;
+}
+
+main section {
+    max-width: 1200px;
+    margin: 70px auto;
+}
+
 ::-webkit-scrollbar {
     background: #f3f6fa;
     width: 20px;
@@ -56,10 +65,6 @@ h2 {
     letter-spacing: 0.1em;
 }
 
-span {
-    display: block;
-}
-
 button {
     display: block;
     text-transform: uppercase;
@@ -69,21 +74,17 @@ button {
     cursor: pointer;
 }
 
-main {
-    width: 85%;
-    margin: 0 auto;
-}
-
-section {
-    overflow: hidden;
-}
-
 .navPanel,
-.page-wrapper {
+.page-wrapper,
+.buttonWrapper {
     transition: transform .4s ease-in-out;
     -moz-transition: transform .4s ease-in-out;
     -webkit-transition: transform .4s ease-in-out;
     -o-transition: transform .4s ease-in-out;
+}
+
+.page-wrapper {
+    overflow-x: hidden;
 }
 
 .navPanel {
@@ -275,21 +276,21 @@ header h1 {
     background: #96dad1 !important;
 }
 
-.header-buttonWrapper {
+.buttonWrapper {
     position: fixed;
     width: 100%;
-    padding: 10px;
+    margin: 10px;
     z-index: 2;
 }
 
-.header-buttonWrapper-buttonOpenPanel {
+.buttonWrapper-buttonOpenPanel {
     background: rgba(163, 169, 170, 0.75);
     border-radius: 3px;
     width: 50px;
     height: 34px;
 }
 
-.header-buttonWrapper-buttonOpenPanel:before {
+.buttonWrapper-buttonOpenPanel:before {
     content: '\f0c9';
     font-size: 1em;
     color: rgb(255, 255, 255, 0.5);
@@ -359,7 +360,7 @@ header h1 {
 }
 
 .additionHeader-wrapperInfo-link {
-    border-bottom: 1px dotted #ffff;
+    border-bottom: 2px dotted #ffff;
 }
 
 .additionHeader-buttonTellMore {
@@ -377,19 +378,13 @@ header h1 {
     background: rgba(188, 202, 206, 0.15);
 }
 
-/* ---------========= <main> =========--------- */
-
-main {
-    width: 85%;
-    margin: 0 auto;
-}
-
 /* ---------========= mainInfo =========--------- */
 
 .mainInfo {
     text-align: center;
     color: #7c8081;
-    padding: 70px 0;
+    padding: 0 25px;
+    overflow: hidden;
 }
 
 .mainInfo-img {
@@ -405,7 +400,7 @@ main {
     position: absolute;
     border-bottom: 5px double;
     opacity: 0.2;
-    width: 600px;
+    width: 100vw;
     top: 1em;
 }
 
@@ -433,7 +428,121 @@ main {
     margin: 40px auto 0;
 }
 
+.mainInfo-txtWrapper p a {
+    color: #3fb1a3;
+    border-bottom: 2px dotted;
+}
 
+/* ---------========= infoIcons =========--------- */
+
+.infoIcons {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    background: #83d3c9;
+    width: 100%;
+    height: fit-content;
+    color: #ffff;
+    padding: 4em 3em;
+}
+
+.infoIcons-wrapper-infoWrapper {
+    max-width: 685px;
+}
+
+.infoIcons-wrapper-title {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.infoIcons-wrapper-infoTxt {
+    text-align: justify;
+}
+
+.infoIcons-wrapper-imgIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 210px;
+}
+
+.infoIcons-wrapper-imgIcons span::before {
+    font-size: 5em;
+    opacity: 0.5;
+}
+
+.infoIcons-wrapper-imgIcons span:nth-child(1)::before {
+    content: '\f017';
+}
+
+.infoIcons-wrapper-imgIcons span:nth-child(2)::before {
+    content: '\f028';
+}
+
+.infoIcons-wrapper-imgIcons span:nth-child(3)::before {
+    content: '\f109';
+}
+
+.infoIcons-wrapper-imgIcons span:nth-child(4)::before {
+    content: '\f01c';
+}
+
+.infoIcons-wrapper-imgIcons span:nth-child(5)::before {
+    content: '\f023';
+}
+
+.infoIcons-wrapper-imgIcons span:nth-child(6)::before {
+    content: '\f013';
+}
+
+.infoIcons-wrapper-button {
+    background: transparent;
+    border: 2px solid;
+    color: #ffff;
+    width: 230px;
+    height: 54px;
+    margin: 2em auto 0;
+    transition: background .4s;
+}
+
+.infoIcons-wrapper-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------========= listInfo =========--------- */
+
+.listInfo {
+    color: #7c8081;
+}
+
+.listInfo-listInfo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.listInfo-listInfo-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.listInfo-wrapperTxt-img {
+    margin: 1.5em 0;
+}
+
+.listInfo-wrapperTxt-img::before {
+    content: '\f00c';
+    font-size: 6em;
+    opacity: 0.3;
+}
+
+.listInfo-wrapperTxt-title {
+    font-size: 1.25em;
+    margin-bottom: 0.6em;
+}
 
 /* ---------========= media =========--------- */
 
@@ -455,6 +564,18 @@ main {
     .additionHeader {
         height: 600px;
     }
+
+    .infoIcons-wrapper-infoTxt {
+        text-align: center;
+    }
+
+    .infoIcons-wrapper-title {
+        line-height: 1.75em;
+    }
+
+    .infoIcons-wrapper-imgIcons {
+        height: unset;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -462,7 +583,41 @@ main {
         display: flex;
     }
 
-    .header-buttonWrapper {
+    .buttonWrapper {
         display: none;
     }
+
+    .infoIcons {
+        flex-direction: unset !important;
+    }
+
+    .infoIcons-wrapper-imgIcons {
+        width: 290px;
+        padding: 25px 0 0 25px;
+        height: 320px;
+    }dd
+
+    .infoIcons-wrapper-imgIcons span::before {
+        font-size: 7em;
+    }
+
+    .infoIcons-wrapper-infoTxt {
+        text-align: left;
+    }
+
+
+    .infoIcons-wrapper-title {
+        text-align: unset;
+    }
+
+    .infoIcons-wrapper-button {
+        margin: 2em 0 0;
+    }
+
+
+    .listInfo-listInfo-item {
+        width: 320px;
+    }
 }
+
+/* ---------========= The End =========--------- */
