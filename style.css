@@ -32,6 +32,10 @@ main section {
     margin: 70px auto;
 }
 
+main section * {
+    color: #7c8081;
+}
+
 ::-webkit-scrollbar {
     background: #f3f6fa;
     width: 20px;
@@ -43,16 +47,7 @@ main section {
     border-radius: 10px;
 }
 
-a,
-p,
-span,
-button,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body * {
     font-family: 'Lato', sans-serif;
     letter-spacing: 1.4px;
     line-height: 1.7em;
@@ -168,8 +163,6 @@ button {
     box-shadow: 0px 0px 0px 2px rgba(250, 250, 250);
 }
 
-/* ---------========= <header> =========--------- */
-
 header {
     background: url(./assets/background/banner.jpg) no-repeat;
     background-position: bottom left;
@@ -179,13 +172,12 @@ header {
     width: 100vw;
 }
 
-header a,
-header p,
-header span,
-header button,
-header h1 {
+header * {
     color: #ffff;
 }
+
+
+/* ---------========= header =========--------- */
 
 .header-layoutList,
 .header-layoutItem-moreLinksList {
@@ -204,8 +196,6 @@ header h1 {
     opacity: 0;
     z-index: 10;
 }
-
-/* ---------========= header =========--------- */
 
 .header {
     display: none;
@@ -382,7 +372,6 @@ header h1 {
 
 .mainInfo {
     text-align: center;
-    color: #7c8081;
     padding: 0 25px;
     overflow: hidden;
 }
@@ -442,8 +431,11 @@ header h1 {
     background: #83d3c9;
     width: 100%;
     height: fit-content;
-    color: #ffff;
     padding: 4em 3em;
+}
+
+.infoIcons * {
+    color: #ffff;
 }
 
 .infoIcons-wrapper-infoWrapper {
@@ -501,11 +493,13 @@ header h1 {
 .infoIcons-wrapper-button {
     background: transparent;
     border: 2px solid;
-    color: #ffff;
     width: 230px;
     height: 54px;
     margin: 2em auto 0;
-    transition: background .4s;
+    transition: background .2s;
+    -moz-transition: background .2s;
+    -webkit-transition: background .2s;
+    -o-transition: background .2s;
 }
 
 .infoIcons-wrapper-button:hover {
@@ -513,10 +507,6 @@ header h1 {
 }
 
 /* ---------========= listInfo =========--------- */
-
-.listInfo {
-    color: #7c8081;
-}
 
 .listInfo-listInfo {
     display: flex;
@@ -542,6 +532,207 @@ header h1 {
 .listInfo-wrapperTxt-title {
     font-size: 1.25em;
     margin-bottom: 0.6em;
+}
+
+/* ---------========= infoCoolStuff =========--------- */
+
+.infoCoolStuff {
+    background: #ffff;
+    padding: 4em 3em;
+    margin-bottom: 0;
+}
+
+.infoCoolStuff-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.infoCoolStuff-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.infoCoolStuff-listItem {
+    max-width: 615px;
+    margin: 15px auto;
+}
+
+.infoCoolStuff-listItem-title {
+    font-size: 17px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.infoCoolStuff-listItem-infoWrapper-txt {
+    text-align: justify;
+}
+
+.infoCoolStuff-buttonSeeMore {
+    background: transparent;
+    border: 1px solid #000;
+    transition: 1s background;
+    max-width: 270px;
+    width: 100%;
+    height: 54px;
+    margin: 40px auto 0px;
+}
+
+.infoCoolStuff-buttonSeeMore:hover {
+    background: rgba(188, 202, 206, 0.15);
+}
+
+/* ---------========= cta =========--------- */
+
+.cta {
+    background: #645862;
+    padding: 5em 10px;
+    max-width: unset;
+    width: 100%;
+}
+
+.cta * {
+    color: #ffff;
+}
+
+.cta-wrapper {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-infoWrapper {
+    margin-top: 1em;
+}
+
+.cta-buttonsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+
+.cta-buttonsWrapper button {
+    width: 269px;
+    height: 57px;
+    margin: 10px
+}
+
+.cta-buttonsWrapper button:nth-child(1) {
+    background: #83d3c9;
+}
+
+.cta-buttonsWrapper button:nth-child(2) {
+    background: transparent;
+    border: 1px solid #ffff;
+}
+
+/* ---------========= footer =========--------- */
+
+.footer {
+    padding: 0 1.5em 3em 1.5em;;
+}
+
+.footer-netWorksList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-netWorksListItem-links {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    transition: transform .5s, opacity .5s;
+    width: 40px;
+    height: 40px;
+}
+
+.footer-netWorksListItem-links:hover {
+    transform: translateY(-5px);
+    opacity: 0.8;
+}
+
+.footer-netWorksListItem {
+    margin: 0 5px;
+}
+
+.footer-netWorksList li:nth-child(1) a {
+    background: #70aecd;
+}
+
+.footer-netWorksList li:nth-child(2) a {
+    background: #7490c3;
+}
+
+.footer-netWorksList li:nth-child(3) a {
+    background: #db6b67;
+}
+
+.footer-netWorksList li:nth-child(4) a {
+    background: #dcad8b;
+}
+
+.footer-netWorksList li:nth-child(5) a {
+    background: #da83ae;
+}
+
+.footer-netWorksList li a::before {
+    position: absolute;
+    font-family: 'fa-brands';
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    color: #ffff;
+    margin: 0 auto;
+}
+
+.footer-netWorksList li:nth-child(1) a::before {
+    content: '\f099';
+}
+
+.footer-netWorksList li:nth-child(2) a::before {
+    content: '\f39e';
+}
+
+.footer-netWorksList li:nth-child(3) a::before {
+    content: '\f0d5';
+}
+
+.footer-netWorksList li:nth-child(4) a::before {
+    content: '\f09b';
+}
+
+.footer-netWorksList li:nth-child(5) a::before {
+    content: '\f17d';
+}
+
+.footer-addition {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 2em;
+}
+
+.footer-addition-txt {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-addition span:nth-child(1) {
+    padding-right: 1em;
+}
+.footer-addition span:nth-child(2) {
+    border-left: 2px dotted #000;
+    padding-left: 1em;
+}
+
+.footer-addition-txt a {
+    color: #000;
+    border-bottom: 2px dotted;
 }
 
 /* ---------========= media =========--------- */
@@ -576,6 +767,14 @@ header h1 {
     .infoIcons-wrapper-imgIcons {
         height: unset;
     }
+
+    .infoCoolStuff-listItem-infoWrapper-txt {
+        text-align: center;
+    }
+
+    .infoCoolStuff {
+        margin-bottom: 70px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -595,7 +794,7 @@ header h1 {
         width: 290px;
         padding: 25px 0 0 25px;
         height: 320px;
-    }dd
+    }
 
     .infoIcons-wrapper-imgIcons span::before {
         font-size: 7em;
@@ -617,6 +816,10 @@ header h1 {
 
     .listInfo-listInfo-item {
         width: 320px;
+    }
+
+    .infoCoolStuff-listItem {
+        max-width: 47%;
     }
 }
 
